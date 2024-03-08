@@ -16,3 +16,9 @@ isEqual = false;
 // isEqual = "cat";
 
 console.log(isEqual);
+
+let prices: number[] = [100,11,2];
+
+let vggies: string[] = ["cucumber", "potato", "carrot"];
+
+let array:(string|number) []= [10, "ice cream"];
