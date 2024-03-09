@@ -17,6 +17,23 @@ isEqual = false;
 
 console.log(isEqual);
 
+// union type
+let tax: number | string = 20;
+tax = 100;
+tax = '10%';
+
+// literal value type
+let user: 'admin' | 'teacher' | 'student';
+user = 'admin';
+// user = 'user';
+
+// any type
+let object: any = 10;
+object = 'string';
+object = true;
+object = {};
+object = [];
+
 let prices: number[] = [100,11,2];
 
 let vggies: string[] = ["cucumber", "potato", "carrot"];
