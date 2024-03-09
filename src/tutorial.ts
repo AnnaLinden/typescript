@@ -39,3 +39,17 @@ let prices: number[] = [100,11,2];
 let vggies: string[] = ["cucumber", "potato", "carrot"];
 
 let array:(string|number) []= [10, "ice cream"];
+
+//exercise
+const books = ['1984', 'Why we sleep', 'War and Peace'];
+let foundBook: string | undefined;
+
+for (let book of books){
+    if (book === 'Why we sleep') {
+        foundBook = book;
+        foundBook = book.toUpperCase();
+        
+        break;
+    }
+}
+console.log(foundBook, foundBook?.length);
