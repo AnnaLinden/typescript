@@ -53,3 +53,38 @@ for (let book of books){
     }
 }
 console.log(foundBook, foundBook?.length);
+
+let temperatures: number[] = [-5, 10,15];
+//temperatures.push("zero");
+let colors: string[] = ["yellow", "red"];
+//colors.push(true);
+let mixedArray: (number|string)[] = [5,6,"nine"];
+//mixedArray.push(true);
+
+//Object gundamentals
+let car: {brand: string; year: number} = {brand: "toyota", year: 2014};
+car.brand = "lexus";
+// car.color = "red";
+
+let book= {title: 'book', cost: 20};
+let pen= {title: 'pen', cost: 3};
+let eraser= {title: 'eraser'};
+let items: {readonly title: string; cost?: number}[] = [book, pen, eraser]
+
+//items[0].title = 'new book';
+book.title = 'new book';
+
+//  object challenge
+
+let bike: { brand: string; year: number} = {brand: 'yamaha', year: 2020};
+//bike.year = 'old';
+
+let laptop: { brand: string; year: number} = {brand: 'dell', year: 2022};
+
+let dress = {title: 'deress', price: 200};
+let blouse = {title: 'blouse', price: 100};
+let clothes: {title: string, price?: number}[]= [dress, blouse];
+
+clothes.push({title: "shoes", price: 400});
+// clothes.push({title: "shoes", price: 'expensive'});
+
