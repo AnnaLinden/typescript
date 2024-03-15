@@ -88,3 +88,17 @@ let clothes: {title: string, price?: number}[]= [dress, blouse];
 clothes.push({title: "shoes", price: 400});
 // clothes.push({title: "shoes", price: 'expensive'});
 
+// FUNCTIONS
+function sayHi(name:string){
+    console.log(`Hello ${name.toUpperCase()}`);
+};
+
+sayHi('Anna');
+
+function calculateDiscount(price:number): number{ //return value is set after brackets
+    
+    return price * 0.95;
+}
+
+const finalPrice = calculateDiscount(500);
+console.log(finalPrice);
