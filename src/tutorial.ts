@@ -102,3 +102,18 @@ function calculateDiscount(price:number): number{ //return value is set after br
 
 const finalPrice = calculateDiscount(500);
 console.log(finalPrice);
+
+//functions challenge
+
+let names: string[] = ['Kille','Gutsy','Rudolf'];
+
+function isName (name:string):boolean {
+    return names.includes(name);
+}
+
+let nameToCheck: string = 'Fiona';
+if (isName(nameToCheck)){
+    console.log(`${nameToCheck} is in the FileList.`)
+} else {
+    console.log(`${nameToCheck} is not in the list.`)
+}
