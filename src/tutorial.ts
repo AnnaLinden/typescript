@@ -137,3 +137,19 @@ let scoreAfterPenalty = calculateScore(100,20);
 console.log(scoreAfterPenalty);
 let scoreWithoutPenalty = calculateScore(400);
 console.log(scoreWithoutPenalty);
+
+// function - rest parameter
+function sum(message: string, ...numbers: number[]):string{
+
+    let doubled = numbers.map((num)=>num*2);
+    let half = numbers.map((number)=>number/2);
+    let tripled = numbers.map((number)=>number*3);
+    console.log(half, numbers, doubled, tripled );
+
+    let total = numbers.reduce((previous,current)=>{
+        return previous+current;
+    },0);
+    return`${message} ${total}`;
+}
+
+let result= sum('The total is: ',1,2,3,4,5);
