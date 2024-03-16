@@ -117,3 +117,23 @@ if (isName(nameToCheck)){
 } else {
     console.log(`${nameToCheck} is not in the list.`)
 }
+
+// functions: optional and defauls parameters
+function calculatePrice(price: number, discount?: number): number{
+    return price - (discount||0);
+}
+
+let priceAfterDiscount = calculatePrice(100,20);
+console.log(priceAfterDiscount);
+
+let priceWithoutDiscount = calculatePrice(100);
+console.log(priceWithoutDiscount);
+
+function calculateScore(initialScore: number, penaltyPoints: number=0) {
+    return initialScore - penaltyPoints;
+}
+
+let scoreAfterPenalty = calculateScore(100,20);
+console.log(scoreAfterPenalty);
+let scoreWithoutPenalty = calculateScore(400);
+console.log(scoreWithoutPenalty);
