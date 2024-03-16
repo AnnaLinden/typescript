@@ -153,3 +153,24 @@ function sum(message: string, ...numbers: number[]):string{
 }
 
 let result= sum('The total is: ',1,2,3,4,5);
+
+// functions void return type
+
+function logMessage(message: string): void{
+    console.log(message);
+}
+
+logMessage('hello there');
+
+//union type as function parameters
+function processInput(input: number|string):void{
+    if (typeof input === 'number'){
+        console.log(input*2);
+    }else {
+        console.log(input.toUpperCase());
+    }
+
+}
+
+processInput(10);
+processInput('hello');
