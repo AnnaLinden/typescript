@@ -174,3 +174,25 @@ function processInput(input: number|string):void{
 
 processInput(10);
 processInput('hello');
+
+// objects as functions parameters
+
+function createEmployee({id}: {id: number}):{id: number; isActive:boolean}{
+    return{id, isActive: id% 2 ===0};
+}
+
+const first = createEmployee({id:1});
+const second = createEmployee({id:2});
+console.log(first, second);
+
+function createStudent(student:{id:number; name:string}){
+    console.log(`Welcome the the course ${student.name.toUpperCase()}!`);
+}
+
+const newStudent = {
+    id:5,
+    name: 'anna',
+    email: 'anna@email.com'
+};
+createStudent(newStudent);
+//createStudent({id:2, name:'aki', email: 'aki@email.com'});
