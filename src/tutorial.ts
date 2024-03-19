@@ -257,7 +257,7 @@ const john: User = {
   type Manager = {id: number; name: string; employees: Employee[]};
   type Staff = Employee | Manager;
 
-  function printStaffDetails(staff: Staff){
+  function printStaffDetails(staff: Staff):void{
     if ('employees' in staff){
         console.log(`${staff.name} is a Manager and has ${staff.employees.length} employees.`);
     } else {
@@ -271,3 +271,26 @@ const john: User = {
 
   printStaffDetails(alice); 
   printStaffDetails(bob);
+
+  // Intersection Types
+  type Book = { id: number; name: string; price: number};
+  type DiscountedBook = Book & {discount: number};
+
+  const book1: Book = {
+    id: 1,
+    name: 'unicorns',
+    price: 10
+  }
+
+  const book2: Book = {
+    id: 2,
+    name: 'marshamellows',
+    price: 15
+  }
+
+  const discountedBook: DiscountedBook = {
+    id: 3,
+    name: 'pink clouds',
+    price: 20,
+    discount: 0.1
+  }
