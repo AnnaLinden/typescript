@@ -301,6 +301,9 @@ const john: User = {
     title: string;
     author: string;
     genre?: string;
+    printAuthor(): void;
+    printTitle(message: string): string;
+    printSomething: (someValue: number) => number;
   }
 
   const deepWork: Kirja = {
@@ -308,6 +311,31 @@ const john: User = {
     title: 'Deep Work',
     author: 'Cal Newport',
     genre: 'Self-help',
+    printAuthor(){
+        console.log(this.author);
+    },
+    printTitle(message) {
+        return `${this.title} ${message}`;
+    },
+    //first option
+    // printSomething: function (someValue){
+    //     return someValue;
+    // }
+    // second option
+    // printSomething: (someValue)=>{
+    //     // in arrow function this is global, not local!
+    //     console.log(deepWork.author);
+    //     return someValue;
+    // }
+    //third option
+    printSomething (someValue) {
+        return someValue;
+    }
+    
   }
 
-  deepWork.title = 'updated title';
+  deepWork.printAuthor();
+  const resultKirja = deepWork.printTitle('is an awesome book');
+  console.log(resultKirja);
+
+  console.log(deepWork.printSomething(37));
