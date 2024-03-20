@@ -294,3 +294,20 @@ const john: User = {
     price: 20,
     discount: 0.1
   }
+
+  // interface
+  interface Kirja {
+    readonly isbn: number;
+    title: string;
+    author: string;
+    genre?: string;
+  }
+
+  const deepWork: Kirja = {
+    isbn: 9781455586691,
+    title: 'Deep Work',
+    author: 'Cal Newport',
+    genre: 'Self-help',
+  }
+
+  deepWork.title = 'updated title';
