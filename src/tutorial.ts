@@ -425,3 +425,52 @@ const manager: Manager1 = {
 };
 
 console.log(manager);
+
+//Challenge
+interface Person2{
+    name: string;
+}
+
+interface DogOwner1 extends Person2 {
+    dogName: string;
+}
+
+interface Manager2 extends Person2 {
+    managePeople(): void;
+    delegateTasks(): void;
+}
+
+const employee2: Person2 |DogOwner1 |Manager2 = getEmployee();
+console.log (employee2);
+
+function getEmployee(): Person2 | DogOwner1 | Manager2 {
+    const random = Math.random();
+    if (random < 0.33) {
+        return{
+            name:'Jack',
+        };
+    } else if (random < 0.66) {
+        return {
+            name: 'sarah',
+            dogName: 'Rex',
+        };
+    } else {
+        return {
+            name: 'Lana',
+            managePeople: ()=> console.log('Managing people...'),
+            delegateTasks: ()=> console.log ('Delegating tasks ...'),
+        };
+    }
+}
+
+// function isManager(obj: Person2 |DogOwner1 |Manager2): boolean {
+//     return 'managePeople' in obj;
+// }
+
+function isManager(obj: Person2 |DogOwner1 |Manager2): obj is Manager2 {
+    return 'managePeople' in obj;
+}
+
+if (isManager(employee2)){
+    employee2.delegateTasks();
+}
