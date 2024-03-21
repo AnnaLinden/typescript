@@ -339,3 +339,28 @@ const john: User = {
   console.log(resultKirja);
 
   console.log(deepWork.printSomething(37));
+
+  //challenge
+  interface Computer {
+    readonly id: number;
+    brand: string;
+    ram: number;
+    storage?: number;
+    upgradeRam(params:number):number;
+  }
+
+  const laptop1: Computer = {
+    id: 1,
+    brand: 'Dell',
+    ram: 8,
+    upgradeRam(params: number){
+        this.ram +- params;
+        return this.ram;
+    }
+  };
+
+  laptop1.storage = 256;
+
+  console.log(laptop1.upgradeRam(4));
+  console.log(laptop1);
+
