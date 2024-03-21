@@ -354,7 +354,7 @@ const john: User = {
     brand: 'Dell',
     ram: 8,
     upgradeRam(params: number){
-        this.ram +- params;
+        this.ram += params;
         return this.ram;
     }
   };
@@ -364,3 +364,64 @@ const john: User = {
   console.log(laptop1.upgradeRam(4));
   console.log(laptop1);
 
+
+  // interface - merge, extend
+  interface Person {
+    name: string;
+    getDetails(): string;
+  }
+
+  interface DogOwner {
+    dogName: string;
+    getDogDetails(): string;
+  }
+
+  // merging the interface
+  interface Person {
+    age: number;
+  }
+
+  const person: Person = {
+    name: "John",
+    age: 30,
+    getDetails() {
+        return `Name: ${this.name}, age: ${this.age}`;
+    },
+  }
+// extending the interface
+
+interface Employee1 extends  Person {
+    employeeId: number;
+}
+
+const employee: Employee1 = {
+    name: 'Jane',
+    age: 37,
+    employeeId: 4,
+    getDetails() {
+        return `Name: ${this.name}, Age: ${this.age}, Employee Id: ${this.employeeId}`
+    },
+};
+console.log (person, employee);
+
+interface Manager1 extends Person, DogOwner {
+    managePeople(): void;
+
+}
+
+const manager: Manager1 = {
+    name: 'Bob',
+    age: 35,
+    dogName: 'Rex',
+    getDetails() {
+        return `Name: ${this.name}, Age: ${this.age}`;
+    },
+    getDogDetails() {
+        return `Dog Name: ${this.dogName}`;
+    },
+    managePeople() {
+        console.log('Managing people...');
+    },
+};
+
+console.log(manager);
