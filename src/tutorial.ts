@@ -474,3 +474,21 @@ function isManager(obj: Person2 |DogOwner1 |Manager2): obj is Manager2 {
 if (isManager(employee2)){
     employee2.delegateTasks();
 }
+
+// tuples - it's an array with fixed length and ordered with fixed types.
+let person3: [string, number] = ['john', 117];
+console.log(person3[0]);
+console.log(person3[1]);
+
+function getPerson(): [string, number] {
+    return ['john', 117];
+} 
+
+let randomPerson = getPerson();
+console.log(randomPerson[0]);
+console.log(randomPerson[1]);
+
+let kai: readonly [string, number] = ['kai' , 25];
+// kai[0] = 'bob';
+console.log(kai);
+
