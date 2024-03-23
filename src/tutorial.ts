@@ -492,3 +492,23 @@ let kai: readonly [string, number] = ['kai' , 25];
 // kai[0] = 'bob';
 console.log(kai);
 
+// enums
+enum ServerResponseStatus {
+    Success = 200,
+    Error = 'Error',
+}
+
+interface ServerResponse {
+    result: ServerResponseStatus;
+    data: string[];
+}
+
+function getServerResponse(): ServerResponse {
+    return{
+        result: ServerResponseStatus.Success,
+        data: ['furst item', 'second item'],
+    };
+}
+
+const response: ServerResponse = getServerResponse();
+console.log(response);
