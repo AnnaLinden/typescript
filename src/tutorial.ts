@@ -559,3 +559,37 @@ const user3: User3 = createUser1({
     contact: ['mail', '123-45-67']
 });
 console.log(user3);
+
+//type assertion
+// Type assertion in TypeScript is a way to tell the compiler what the type 
+// of an existing variable is. This is especially useful when you know more 
+// about the type of a variable than TypeScript does.
+
+let someValue: any = 'This is a string';
+
+let strLength: number = (someValue as string).length;
+
+type Bird =  {
+    name: string;
+};
+
+let birdString =  '{"name": "Eagle"}';
+
+let birdObject = JSON.parse(birdString);
+
+let bird = birdObject as Bird;
+console.log(bird.name);
+
+enum Status {
+    Pending = 'pending',
+    Declined = 'declined',
+}
+
+type User2 = {
+    name: string;
+    status: Status;
+}
+
+const statusValue = 'pending';
+
+const user2: User2 = { name: 'john', status: statusValue as Status };
