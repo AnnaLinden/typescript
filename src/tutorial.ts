@@ -494,9 +494,29 @@ console.log(kai);
 
 // enums
 enum ServerResponseStatus {
-    Success = 200,
+    Success = 'Success',
     Error = 'Error',
 }
+
+Object.values(ServerResponseStatus).forEach((value)=>{
+    console.log(value);
+    
+}
+)
+
+
+// enum ServerResponseStatus {
+//     Success = 200,
+//     Error = 500,
+// }
+
+// Object.values(ServerResponseStatus).forEach((value)=>{
+//     if (typeof value === 'number') {
+//         console.log(value);
+        
+//     }
+    
+// })
 
 interface ServerResponse {
     result: ServerResponseStatus;
@@ -512,3 +532,30 @@ function getServerResponse(): ServerResponse {
 
 const response: ServerResponse = getServerResponse();
 console.log(response);
+
+// enum challenge
+enum UserRole {
+    Admin,
+    Manager,
+    Employee,
+}
+
+// Define a type alias named User
+type User3 = {
+    id: number;
+    name: string;
+    role: UserRole;
+    contact: [string, string]
+};
+
+function createUser1 (user: User3){
+    return user
+}
+
+const user3: User3 = createUser1({
+    id: 5,
+    name: 'Jane',
+    role: UserRole.Admin,
+    contact: ['mail', '123-45-67']
+});
+console.log(user3);
