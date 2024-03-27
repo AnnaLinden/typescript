@@ -628,4 +628,46 @@ try {
     }
 }
 
+// type never
+//let someValue1: never = 0
+
+
+type Theme1 = 'light'|'dark'
+
+function checkTheme(theme: Theme1){
+    if (theme === 'light'){
+        console.log('lighe theme');
+        return;
+    } 
+    if (theme === 'dark'){
+        console.log('dark theme');  
+        return;
+    }
+    theme;
+}
+
+enum Color {
+    Red,
+    Blue,
+    // Green,
+}
+
+function getColor (color: Color) {
+    switch(color) {
+        case Color.Red:
+            return 'Red';
+        case Color.Blue:
+            return 'Blue';
+        default:
+            // at built time
+            let unexpectedColor: never = color;
+            throw new Error (`Unexpected color value: ${unexpectedColor}`);
+    }
+}
+
+console.log(getColor(Color.Red));
+console.log(getColor(Color.Blue));
+//console.log(getColor(Color.Green));
+
+
 
