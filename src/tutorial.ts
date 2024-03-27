@@ -593,3 +593,39 @@ type User2 = {
 const statusValue = 'pending';
 
 const user2: User2 = { name: 'john', status: statusValue as Status };
+
+//type unknown
+let unknownValue: unknown;
+
+//assign different values to unknownValue
+unknownValue = 10.536;
+unknownValue = 'Hello';
+unknownValue = [1,2,3,4,5];
+unknownValue = 10.536;
+
+//unknownValue.toFixed();
+if (typeof unknownValue === 'number'){
+    console.log(unknownValue.toFixed(2));
+}
+
+function runSomeCode() {
+    const random = Math.random();
+    if (random < 0.5) {
+        throw new Error ('Something went wrong');
+    } else {
+        throw 'some error';
+    }
+}
+
+try {
+    runSomeCode();
+} catch (error){
+    if (error instanceof Error){
+        console.log(error.message);
+    } else {
+        console.log (error);
+        console.log('there was an error ...')
+    }
+}
+
+
